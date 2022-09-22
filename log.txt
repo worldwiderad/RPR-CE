@@ -1,0 +1,16 @@
+Wired up rpi3 and rpi4, enabled ssh
+download repo to rpis via pip
+rpi4 working, rpi 3 not, rpi 4 can recieve its own transmittions, but rpi3 cant do either
+swich transmitters and recivers on rpis, still not working
+checked code, nothing
+swiched wires and transmitter, now rpi3 works and rpi4 does not
+replaced wires for rpi4, working
+rpi4 only recives transmitions sent by it's self, same w. rpi3.
+Goes crazy
+swiches the recivers so that the rpi3 reciver is beside the rpi4 transmitter and vice versa
+now it is working
+however, tryied putting them farther apart, bc of interferience
+did not work
+research
+need antenna
+now 2022-09-22
