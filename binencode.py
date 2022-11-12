@@ -70,7 +70,7 @@ def encode(a):
     cipher = ""
     for d in a:
         encoded_char = charencode(d)
-        cipher = cipher + encoded_char + " "
+        cipher = cipher + encoded_char
     return (cipher)
 
 
