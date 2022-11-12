@@ -73,6 +73,4 @@ def encode(a):
         cipher = cipher + encoded_char + " "
     return (cipher)
 
-user_input = input("Enter something to print in binary: ")
-cipher = encode(user_input)
-print(cipher)
+
