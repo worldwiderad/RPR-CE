@@ -10,8 +10,6 @@ logging.basicConfig(level=logging.INFO, datefmt='%Y-%m-%d %H:%M:%S',
                     format='%(asctime)-15s - [%(levelname)s] %(module)s: %(message)s',)
 
 parser = argparse.ArgumentParser(description='Sends a decimal code via a 433/315MHz GPIO device')
-parser.add_argument('code', metavar='CODE', type=int,
-                    help="Decimal code to send")
 parser.add_argument('-g', dest='gpio', type=int, default=17,
                     help="GPIO pin (Default: 17)")
 parser.add_argument('-p', dest='pulselength', type=int, default=None,
@@ -31,19 +29,21 @@ if args.pulselength:
     pulselength = args.pulselength
 else:
     pulselength = "default"
-logging.info(str(args.code) +
-             " [protocol: " + str(protocol) +
-             ", pulselength: " + str(pulselength) + "]")
 
-user_input = input("Enter something to print in binary: ")
+user_input = input("Welcome to the RPR-CE, Raspberry Pi Radio and Chess Encyption" + 
+                   "Please enter an all-lowercase message with basic punctuation.")
 cipher = binencode.encode(user_input)
 print(cipher)
 
 
 
 for digit in cipher:
-    print (int(digit))
-    print (args.protocol)
-    print (args.pulselength)
+    logging.info("Sending digit: " + digit +
+             " [protocol: " + str(protocol) +
+             ", pulselength: " + str(pulselength) + "]")
     rfdevice.tx_code(int(digit) + 1, args.protocol, args.pulselength)
+
+logging.info("Sent cipher: " + cipher +
+             " [protocol: " + str(protocol) +
+             ", pulselength: " + str(pulselength) + "]")
 rfdevice.cleanup()
