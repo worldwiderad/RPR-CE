@@ -34,10 +34,10 @@ ciphertext = ""
 while True:
     if rfdevice.rx_code_timestamp != timestamp:
         timestamp = rfdevice.rx_code_timestamp
-        ciphertext = ciphertext + str(rfdevice.rx_code)
-        logging.info(str(rfdevice.rx_code) +
+        ciphertext = ciphertext + str(rfdevice.rx_code - 1)
+        logging.info(str(rfdevice.rx_code - 1) +
                      " [pulselength " + str(rfdevice.rx_pulselength) +
                      ", protocol " + str(rfdevice.rx_proto) + "]")
         print(ciphertext)
-    time.sleep(0.01)
+    time.sleep(0.25)
 rfdevice.cleanup()
