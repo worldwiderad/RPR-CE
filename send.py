@@ -29,9 +29,8 @@ if args.pulselength:
     pulselength = args.pulselength
 else:
     pulselength = "default"
-
-user_input = input("Welcome to the RPR-CE, Raspberry Pi Radio and Chess Encyption" + 
-                   "Please enter an all-lowercase message with basic punctuation.")
+logging.info("Welcome to the RPR-CE, Raspberry Pi Radio and Chess Encyption")
+user_input = input("Please enter an all-lowercase message with basic punctuation: ")
 cipher = binencode.encode(user_input)
 print(cipher)
 
