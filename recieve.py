@@ -28,11 +28,16 @@ rfdevice = RFDevice(args.gpio)
 rfdevice.enable_rx()
 timestamp = None
 logging.info("Listening for codes on GPIO " + str(args.gpio))
+
+ciphertext = ""
+
 while True:
     if rfdevice.rx_code_timestamp != timestamp:
         timestamp = rfdevice.rx_code_timestamp
+        ciphertext = ciphertext + rfdevice.rx_code
         logging.info(str(rfdevice.rx_code) +
                      " [pulselength " + str(rfdevice.rx_pulselength) +
                      ", protocol " + str(rfdevice.rx_proto) + "]")
+        print(ciphertext)
     time.sleep(0.01)
 rfdevice.cleanup()
