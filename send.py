@@ -36,7 +36,7 @@ logging.info(str(args.code) +
              ", pulselength: " + str(pulselength) + "]")
 
 user_input = input("Enter something to print in binary: ")
-cipher = encode(user_input)
+cipher = binencode.encode(user_input)
 print(cipher)
 
 rfdevice.tx_code(args.code, args.protocol, args.pulselength)
