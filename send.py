@@ -2,6 +2,7 @@
 
 import argparse
 import logging
+import binencode
 
 from rpi_rf import RFDevice
 
@@ -33,6 +34,10 @@ else:
 logging.info(str(args.code) +
              " [protocol: " + str(protocol) +
              ", pulselength: " + str(pulselength) + "]")
+
+user_input = input("Enter something to print in binary: ")
+cipher = encode(user_input)
+print(cipher)
 
 rfdevice.tx_code(args.code, args.protocol, args.pulselength)
 rfdevice.cleanup()
