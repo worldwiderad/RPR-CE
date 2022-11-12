@@ -3,7 +3,6 @@
 import argparse
 import logging
 import binencode
-
 from rpi_rf import RFDevice
 
 logging.basicConfig(level=logging.INFO, datefmt='%Y-%m-%d %H:%M:%S',
@@ -29,12 +28,13 @@ if args.pulselength:
     pulselength = args.pulselength
 else:
     pulselength = "default"
+
 logging.info("Welcome to the RPR-CE, Raspberry Pi Radio and Chess Encyption")
 user_input = input("Please enter an all-lowercase message with basic punctuation: ")
+
 cipher = binencode.encode(user_input)
-print(cipher)
 
-
+logging.info("Here is your encrypted message in binary:" + cipher)
 
 for digit in cipher:
     logging.info("Sending digit: " + digit +
@@ -45,4 +45,5 @@ for digit in cipher:
 logging.info("Sent cipher: " + cipher +
              " [protocol: " + str(protocol) +
              ", pulselength: " + str(pulselength) + "]")
+
 rfdevice.cleanup()
