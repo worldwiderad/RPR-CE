@@ -34,7 +34,7 @@ ciphertext = ""
 while True:
     if rfdevice.rx_code_timestamp != timestamp:
         timestamp = rfdevice.rx_code_timestamp
-        ciphertext = ciphertext + rfdevice.rx_code
+        ciphertext = ciphertext + str(rfdevice.rx_code)
         logging.info(str(rfdevice.rx_code) +
                      " [pulselength " + str(rfdevice.rx_pulselength) +
                      ", protocol " + str(rfdevice.rx_proto) + "]")
