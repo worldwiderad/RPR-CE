@@ -45,5 +45,5 @@ for digit in cipher:
     print (int(digit))
     print (args.protocol)
     print (args.pulselength)
-    rfdevice.tx_code(int(digit), args.protocol, args.pulselength)
+    rfdevice.tx_code(int(digit) + 1, args.protocol, args.pulselength)
 rfdevice.cleanup()
