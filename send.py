@@ -39,7 +39,6 @@ user_input = input("Enter something to print in binary: ")
 cipher = binencode.encode(user_input)
 print(cipher)
 
-for w in 
-
-rfdevice.tx_code(args.code, args.protocol, args.pulselength)
+for digit in cipher:
+    rfdevice.tx_code(int(digit), args.protocol, args.pulselength)
 rfdevice.cleanup()
