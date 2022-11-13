@@ -39,5 +39,5 @@ while True:
                      " [pulselength " + str(rfdevice.rx_pulselength) +
                      ", protocol " + str(rfdevice.rx_proto) + "]")
         print(ciphertext)
-    time.sleep(1)
+    time.sleep(0.01)
 rfdevice.cleanup()
