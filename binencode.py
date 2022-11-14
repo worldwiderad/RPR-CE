@@ -66,11 +66,11 @@ def charencode(c):
 
   
 
-def encode(a):
+def encode(plaintext):
     cipher = ""
-    for d in a:
-        encoded_char = charencode(d)
+    for letter in plaintext:
+        encoded_char = charencode(letter)
         cipher = cipher + encoded_char
     return (cipher)
 
-
+print(encode(input("enter text dodo")))

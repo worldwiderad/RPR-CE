@@ -34,7 +34,7 @@ user_input = input("Please enter an all-lowercase message with basic punctuation
 
 cipher = binencode.encode(user_input)
 
-logging.info("Here is your encrypted message in binary:" + cipher)
+logging.info("Here is your encrypted message in binary: " + cipher)
 
 for digit in cipher:
     logging.info("Sending digit: " + digit +
