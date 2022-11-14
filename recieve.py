@@ -5,6 +5,7 @@ import signal
 import sys
 import time
 import logging
+import bindecode
 
 from rpi_rf import RFDevice
 
@@ -38,6 +39,6 @@ while True:
         logging.info(str(rfdevice.rx_code - 1) +
                      " [pulselength " + str(rfdevice.rx_pulselength) +
                      ", protocol " + str(rfdevice.rx_proto) + "]")
-        print(ciphertext)
     time.sleep(4) 
+    print(bindecode.decrypt(ciphertext))
 rfdevice.cleanup()
