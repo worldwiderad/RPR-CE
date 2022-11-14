@@ -70,9 +70,12 @@ def decryptchar(c):
 
 
 def decrypt (ciphertext):
-  decoded = ""
-  for i in range(0, len(ciphertext), 5):
-    binletter = ciphertext[i] + ciphertext[i + 1] + ciphertext[i + 2] + ciphertext[i + 3] + ciphertext[i + 4]
-    c = decryptchar(binletter)
-    decoded = decoded + c
-  return decoded
+  if ciphertext.length % 5 != 0
+    return ""
+  else:
+    decoded = ""
+    for i in range(0, len(ciphertext), 5):
+      binletter = ciphertext[i] + ciphertext[i + 1] + ciphertext[i + 2] + ciphertext[i + 3] + ciphertext[i + 4]
+      c = decryptchar(binletter)
+      decoded = decoded + c
+    return decoded
