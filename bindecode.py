@@ -70,7 +70,7 @@ def decryptchar(c):
 
 
 def decrypt (ciphertext):
-  if ciphertext.length % 5 != 0:
+  if len(ciphertext) % 5 != 0:
     return ""
   else:
     decoded = ""
