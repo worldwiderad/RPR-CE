@@ -46,4 +46,4 @@ logging.info("Sent cipher: " + cipher +
              " [protocol: " + str(protocol) +
              ", pulselength: " + str(pulselength) + "]")
 
-rfdevice.cleanup()
+rfdevice.cleanup() 
