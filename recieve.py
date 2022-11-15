@@ -41,4 +41,4 @@ while True:
                      ", protocol " + str(rfdevice.rx_proto) + "]")
         print(bindecode.decrypt(ciphertext))
     time.sleep(4) 
-rfdevice.cleanup()
+rfdevice.cleanup() 
