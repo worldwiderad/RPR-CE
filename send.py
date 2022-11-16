@@ -11,9 +11,9 @@ logging.basicConfig(level=logging.INFO, datefmt='%Y-%m-%d %H:%M:%S',
 parser = argparse.ArgumentParser(description='Sends a decimal code via a 433/315MHz GPIO device')
 parser.add_argument('-g', dest='gpio', type=int, default=17,
                     help="GPIO pin (Default: 17)")
-parser.add_argument('-p', dest='pulselength', type=int, default=None,
-                    help="Pulselength (Default: 350)")
-parser.add_argument('-t', dest='protocol', type=int, default=None,
+parser.add_argument('-p', dest='pulselength', type=int, default=1000,
+                    help="Pulselength (Default: 1000)")
+parser.add_argument('-t', dest='protocol', type=int, default=1,
                     help="Protocol (Default: 1)")
 args = parser.parse_args()
 
@@ -45,5 +45,7 @@ for digit in cipher:
 logging.info("Sent cipher: " + cipher +
              " [protocol: " + str(protocol) +
              ", pulselength: " + str(pulselength) + "]")
+
+logging.info("Thank you for using RPR-CE, Raspberry Pie Radio and Chess Encryption!")
 
 rfdevice.cleanup() 
